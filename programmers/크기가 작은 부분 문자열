@@ -1,25 +1,16 @@
-public class Solution {
+class Solution {
     public int solution(String t, String p) {
         int answer = 0;
-        //HashMap<Integer, Integer> a = new HashMap<>();
+
         for(int i =0; i< t.length() - p.length() + 1; i++){
-            //a.put(i, Integer.parseInt(t.substring(i, i + p.length())));
-            if (Integer.parseInt(p) >Integer.parseInt(t.substring(i, i + p.length()))){
+           
+            if (Long.parseLong(p) > Long.parseLong(t.substring(i, i + p.length()))){
                 answer += 1;
-            }else if(Integer.parseInt(p) == Integer.parseInt(t.substring(i, i + p.length()))){
+            }else if(Long.parseLong(p) == Long.parseLong(t.substring(i, i + p.length()))){
                 answer += 1;
             };
-
 
         }
-
-        /*for(int j = 0; j< t.length() - p.length() + 1; j++){
-            if (Integer.parseInt(p) > a.get(j)){
-                answer += 1;
-            }else if(Integer.parseInt(p) == a.get(j)){
-                answer += 1;
-            };
-        }*/
 
         return answer;
     }
